@@ -6,12 +6,15 @@
   box-sizing: border;
   font-family: "Roboto", "sans-serif";
 }
+
+/* Register Form */
+
 .register-form {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: lightblue;
+  background: silver;
 }
 .register-form form {
   display: flex;
@@ -20,7 +23,7 @@
   border: 1px solid gray;
   background: white;
   padding: 2rem;
-  border-radius: 1.5rem;
+  border-radius: 0.75rem;
   box-shadow: 10px 10px 50px grey;
 }
 .register-form form label:after {
@@ -28,17 +31,22 @@
   margin-left: 4px;
   color: red;
 }
-.register-form form input {
+.register-form form input,
+.login-container form input {
   padding: 0.7rem;
   border: none;
   border-radius: 4px;
   margin: 0.2rem 0;
-  background-color: rgb(216, 213, 213);
+  border: none;
+  border-bottom: 1px solid gray;
+  border-radius: 0;
+  outline: none;
   font-weight: bold;
 }
 .name-container {
   display: flex;
   gap: 10px;
+  margin-top: 1rem;
 }
 .nameField input {
   display: block;
@@ -47,24 +55,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
-#registerBtn {
+#registerBtn,
+#loginBtn {
   color: white;
   font-size: 15px;
-  background-color: black;
+  background-color: green;
   border-radius: 20px;
   margin: 0.5rem auto;
   padding: 0.9rem 4rem;
   margin-bottom: 0.9rem;
 }
-#registerBtn:hover {
+#registerBtn:hover,
+#loginBtn:hover {
   cursor: pointer;
   /* opacity: 0.8; */
   transform: scale(1.05);
   transition: 300ms;
 }
-#registerBtn:active {
+#registerBtn:active,
+#loginBtn:active {
   opacity: 0.8;
   transition: 300ms;
 }
@@ -110,7 +121,103 @@
 #firstnameSpan,
 #lastnameSpan,
 #emailSpan,
+#passwordSpan,
 #cpasswordSpan {
   color: red;
   font-size: 14px;
+}
+
+/* Login Form */
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: silver;
+}
+.login-container form {
+  display: flex;
+  border: 1px solid gray;
+  background: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  flex-direction: column;
+  gap: 0.25rem;
+  max-width: 50%;
+}
+@media (max-width: 480px) {
+  .login-container form h1 {
+    font-size: 14px;
+  }
+  .login-container form h2 {
+    font-size: 12px;
+  }
+  .login-container form label,
+  .login-container form input {
+    font-size: 10px;
+  }
+}
+.login-container form h2,
+.login-container form h1 {
+  margin: 0 auto;
+  margin: 1rem auto;
+}
+
+.rememberMeBox {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+.rememberMeBox .forgotme a {
+  color: blue;
+  text-decoration: underline;
+}
+.registerRedirect {
+  margin: 1rem 0;
+}
+.registerRedirect p a {
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
+}
+.divider {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: grey;
+  width: 100%;
+  margin: 5px 0;
+}
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  margin: 0 10px;
+  border-bottom: 1px solid #ccc;
+  color: black;
+}
+.loginusing {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  gap: 5px;
+}
+.loginusing a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px auto;
+  background-color: green;
+  min-width: 70%;
+  border: none;
+  color: white;
+  padding: 0.5rem 0.6rem;
+  text-decoration: none;
+  border-radius: 10px;
+}
+.loginusing a:hover {
+  opacity: 0.8;
+  transition: 300ms;
+  transform: scale(1.05);
 }
