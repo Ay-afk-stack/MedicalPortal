@@ -3,7 +3,7 @@
 include("./database/dbConnection.php");
 
 session_start();
-if (isset($_SESSION["email"])){
+if (isset($_SESSION["id"])){
     header("Location:index.php");
 }
 else{

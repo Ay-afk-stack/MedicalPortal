@@ -2,7 +2,7 @@
 include("./database/dbConnection.php");
 
 session_start();
-if (isset($_SESSION["email"])){
+if (isset($_SESSION["id"])){
     header("Location:index.php");
 }
 else{
@@ -20,17 +20,15 @@ $result=mysqli_query($conn,$select_query);
 
 if(mysqli_num_rows($result)> 0){
     $row=mysqli_fetch_array($result);
-    $firstname=$row['firstname'];
+    $id=$row['id'];
     $password=$row['password'];
     if(password_verify($p,$password)){
         if($rememberme=="true"){
-            $_SESSION["email"]=$email;
-            $_SESSION["password"]=$password;    
-            setcookie("email",$email,time()+60,"/",secure:true);
+            $_SESSION["id"]=$id;   
+            setcookie("email",$email,time()+1800,"/",secure:true);
         }
         else{
-            $_SESSION["email"]=$email;
-            $_SESSION["password"]=$password;
+            $_SESSION["id"]=$id;
         }
     }
     else{

@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if(!isset($_SESSION["email"])){
+if(!isset($_SESSION["id"])){
     header("Location:login.php");
 }
 ?>
@@ -13,6 +13,6 @@ if(!isset($_SESSION["email"])){
     <title>Home</title>
 </head>
 <body>
-    <p>Welcome <?php echo $_SESSION["email"]; ?><a href="logout.php">Logout</a></p>
+    <p>Welcome <?php echo $_SESSION["id"]; ?><a href="logout.php">Logout</a></p>
 </body>
 </html>
